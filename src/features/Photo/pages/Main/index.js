@@ -33,8 +33,8 @@ function MainPage(props) {
         dispatch(action)
     }
 
-    const handleCategoryFilter = (categoryId) => {
-        console.log("1111111", categoryId)
+    const handleCategoryFilter = (category) => {
+        console.log("1111111", category)
         if(category) {
             const selectedCategoryId = category.value
             setFilterCategory(selectedCategoryId)
