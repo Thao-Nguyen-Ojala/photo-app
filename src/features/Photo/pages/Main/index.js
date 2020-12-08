@@ -7,7 +7,6 @@ import Images from "constants/images";
 import { useDispatch, useSelector } from "react-redux";
 import PhotoList from "features/Photo/components/PhotoList";
 import { removePhoto } from "features/Photo/photoSlice";
-import PhotoFilter from "features/Photo/components/PhotoFilter";
 import DropdownList from "features/Photo/components/DropdownList";
 
 
@@ -52,10 +51,6 @@ function MainPage(props) {
                     <Link to="/photos/add">Add new photo</Link> 
                 </div>
                 <DropdownList />
-                <PhotoFilter 
-                initialValues={initialValues}
-                onCategoryChangeFilter={handleCategoryFilter}
-                />
 
                 <PhotoList 
                     photoList={photos}
