@@ -39,7 +39,12 @@ function MainPage(props) {
     }
 
     const handleCategoryFilter = (categoryId) => {
-        console.log("cate id", categoryId)
+        if(category) {
+            const selectedCategoryId = category.value
+            setFilterCategory(selectedCategoryId)
+        } else {
+            setFilterCategory(category)
+        }  
     }
 
     const photosToRender = filterCategory ? 
