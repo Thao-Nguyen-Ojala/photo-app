@@ -42,6 +42,9 @@ function MainPage(props) {
         console.log("cate id", categoryId)
     }
 
+    const photosToRender = filterCategory ? 
+        photos.filter(photo => photo.categoryId === filterCategory) : photos
+
     return (
         <div className="photo-main">
             <Banner title="Your favorit photos" backgroundUrl={Images.PINK_BG} />
@@ -50,10 +53,11 @@ function MainPage(props) {
                 <div className="py-5">
                     <Link to="/photos/add">Add new photo</Link> 
                 </div>
-                <DropdownList />
+                <DropdownList 
+                    filterChange={handleCategoryFilter}/>
 
                 <PhotoList 
-                    photoList={photos}
+                    photoList={photosToRender}
                     onPhotoEditClick={handlePhotoEditList}
                     onPhotoRemoveClick={handlePhotoRemoveList}
                 />
