@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 
 import { Link, useHistory } from "react-router-dom"
 import { Container } from "reactstrap"
@@ -15,23 +15,18 @@ MainPage.propsTypes = {};
 function MainPage(props) {
     const dispatch = useDispatch()
 
-    const initialValues = {
-        categoryId: null
-    }
-
     const photos = useSelector(state => state.photos)
-    console.log("List of photos", photos)
+    
+    const[filterCategory, setFilterCategory] = useState(null)
 
     const history = useHistory()
 
     const handlePhotoEditList = (photo) => {
-        console.log("Edit", photo);
         const editPhotoUrl = `/photos/${photo.id}`;
         history.push(editPhotoUrl)
     }
 
     const handlePhotoRemoveList = (photo) => {
-        console.log("Remove", photo)
         const removePhotoId = photo.id;
         const action = removePhoto(removePhotoId)
 
@@ -39,6 +34,7 @@ function MainPage(props) {
     }
 
     const handleCategoryFilter = (categoryId) => {
+        console.log("1111111", categoryId)
         if(category) {
             const selectedCategoryId = category.value
             setFilterCategory(selectedCategoryId)
