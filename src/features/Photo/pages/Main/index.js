@@ -7,7 +7,9 @@ import Images from "constants/images";
 import { useDispatch, useSelector } from "react-redux";
 import PhotoList from "features/Photo/components/PhotoList";
 import { removePhoto } from "features/Photo/photoSlice";
-import DropdownList from "features/Photo/components/DropdownList";
+//import PhotoFilter from "features/Photo/components/PhotoFilter";
+import DropdownList from "components/DropdownList";
+
 
 
 MainPage.propsTypes = {};
@@ -17,7 +19,7 @@ function MainPage(props) {
 
     const photos = useSelector(state => state.photos)
     
-    const[filterCategory, setFilterCategory] = useState(null)
+    const [filterCategory, setFilterCategory] = useState(null)
 
     const history = useHistory()
 
@@ -33,8 +35,7 @@ function MainPage(props) {
         dispatch(action)
     }
 
-    const handleCategoryFilter = (category) => {
-        console.log("1111111", category)
+    const handleCategoryFilter = (category) => {        
         if(category) {
             const selectedCategoryId = category.value
             setFilterCategory(selectedCategoryId)
@@ -51,11 +52,12 @@ function MainPage(props) {
             <Banner title="Your favorit photos" backgroundUrl={Images.PINK_BG} />
 
             <Container className="text-center">
-                <div className="py-5">
+                <div className="py-4">
                     <Link to="/photos/add">Add new photo</Link> 
                 </div>
                 <DropdownList 
-                    filterChange={handleCategoryFilter}/>
+                    filterChange={handleCategoryFilter}
+                />
 
                 <PhotoList 
                     photoList={photosToRender}
