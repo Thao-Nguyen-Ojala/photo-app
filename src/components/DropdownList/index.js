@@ -3,8 +3,6 @@ import Select from 'react-select';
 
 import { PHOTO_CATEGORY_OPTIONS } from 'constants/global';
 
-DropdownList.propTypes = {}
-
 DropdownList.defaultProps = {
   categoryId: null
 }

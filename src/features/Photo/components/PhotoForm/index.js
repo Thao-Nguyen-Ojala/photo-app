@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
 import React from "react"
 import { Button, FormGroup, Spinner } from "reactstrap"
-import { Formik, Form, FastField } from "formik"
+import { Formik, Form, Field } from "formik"
 
 import { PHOTO_CATEGORY_OPTIONS } from "constants/global"
 import InputField from "custom-fields/InputField"
@@ -50,30 +50,25 @@ const validationSchema = Yup.object().shape({
                
                return (
                 <Form>
-                    <FastField 
-                        //props of FastField
+                    <Field 
                         name="title"
                         component={InputField}
-                        //props that pass data to InputField
                         label="Title"
                         placeholder="Eg: Wow nature"
                     />
 
-                    <FastField 
-                        //props of FastField
+                    <Field 
                         name="categoryId"
                         component={SelectField}
-                        //props that pass data to SelectField
 
                         label="Category"
                         placeholder="What is your photo category?"
                         options={PHOTO_CATEGORY_OPTIONS}
                     />
 
-                    <FastField 
+                    <Field 
                         name="photo"
                         component={RandomPhotoField}
-                        //props that pass data to RandomPhotoField
 
                         label="Photo"
                         
