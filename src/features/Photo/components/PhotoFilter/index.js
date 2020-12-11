@@ -20,7 +20,6 @@ function PhotoFilter(props) {
     return (
         <Formik initialValues={initialValues}>
             { formikProps => {
-                //const {values} = formikProps
 
                 return (
                 <Form>
