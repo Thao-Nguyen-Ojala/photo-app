@@ -9,9 +9,6 @@ import SelectField from "custom-fields/SelectField"
 import RandomPhotoField from "custom-fields/RandomPhotoField"
 import * as Yup from "yup"
 
-//import { InputField } from "../../../../custom-fields/InputField"
-
-
 PhotoForm.propTypes = {
     onSubmit: PropTypes.func
 }
@@ -21,22 +18,20 @@ PhotoForm.defaultProps = {
 }
 
 function PhotoForm(props) {
-    //working with Formik, before declare the controls, have to declare initual values for
     const { initialValues, isAddMode } = props
 
-const validationSchema = Yup.object().shape({
-    title: Yup.string().required("This field is required"),
+    const validationSchema = Yup.object().shape({
+        title: Yup.string().required("This field is required"),
 
-    categoryId: Yup.number().required("This field is required").nullable(),
+        categoryId: Yup.number().required("This field is required").nullable(),
 
-    photo: Yup.string().when("categoryId", {
-        is: 1,
-        then: Yup.string().required("This field is required"),
-        otherwise: Yup.string().notRequired()
+        photo: Yup.string().when("categoryId", {
+            is: 1,
+            then: Yup.string().required("This field is required"),
+            otherwise: Yup.string().notRequired()
+        })
     })
-})
     return (
-        //add initialValues inside tag Formik
        <Formik 
             initialValues={initialValues}
             validationSchema={validationSchema}
@@ -45,8 +40,7 @@ const validationSchema = Yup.object().shape({
 
            {formikProps => {
 
-               const { values, errors, touched, isSubmitting } = formikProps
-               console.log("values, errors, touched",{values, errors, touched})
+               const { isSubmitting } = formikProps
                
                return (
                 <Form>

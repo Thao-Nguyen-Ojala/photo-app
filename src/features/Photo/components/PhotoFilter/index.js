@@ -15,15 +15,12 @@ function PhotoFilter(props) {
 
     const onCategoryChange = (selectedValue) => {
         onCategoryChangeFilter(selectedValue)
-        console.log("changed to ", selectedValue);
     }
-    console.log("init", {initialValues})
 
     return (
         <Formik initialValues={initialValues}>
             { formikProps => {
-                const {values} = formikProps
-                console.log("values from the filter", {values} )
+                //const {values} = formikProps
 
                 return (
                 <Form>
@@ -37,16 +34,9 @@ function PhotoFilter(props) {
                     />
                 </Form>
                 )
-            }}
-            
-    </Formik>
-
+            }}  
+        </Formik>
     )
 }
-/*
-
-
-  
-*/
 
 export default PhotoFilter

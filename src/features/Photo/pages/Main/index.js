@@ -7,10 +7,7 @@ import Images from "constants/images";
 import { useDispatch, useSelector } from "react-redux";
 import PhotoList from "features/Photo/components/PhotoList";
 import { removePhoto } from "features/Photo/photoSlice";
-//import PhotoFilter from "features/Photo/components/PhotoFilter";
 import DropdownList from "components/DropdownList";
-
-
 
 MainPage.propsTypes = {};
 

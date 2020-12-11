@@ -34,8 +34,6 @@ function RandomPhotoField(props) {
                 imageUrl={value}
                 onImageUrlChange={handleImageUrlChange}
                 onRandomeButtonBlur={onBlur}
-
-    
             />
 
             <div className={showError ? "is-invalid" : ""}></div>

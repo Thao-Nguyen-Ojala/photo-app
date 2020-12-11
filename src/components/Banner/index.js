@@ -13,7 +13,6 @@ Banner.defaultProps = {
 }
 
 function Banner(props) {
-    console.log('props', props)
     const { title, backgroundUrl } = props;
 
     const bannerStyle = backgroundUrl

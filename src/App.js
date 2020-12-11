@@ -5,12 +5,9 @@ import {
   Route,
   Redirect
 } from "react-router-dom";
-//import './App.css';
 import Header from "./components/Header"
 import NotFound from "./components/NotFound"
 import Photo from "./features/Photo"
-
-//const Photo = React.lazy(() => import("./features/Photo"))
 
 function App() {
   return (

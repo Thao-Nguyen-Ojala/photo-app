@@ -4,8 +4,6 @@ import { addPhoto, updatePhoto } from "features/Photo/photoSlice"
 import React from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory, useParams } from "react-router-dom"
-
-
 import "./styles.scss"
 
 AddEditPage.propTypes = {}
@@ -17,7 +15,6 @@ function AddEditPage(props) {
     const isAddMode = !photoId
 
     const editedPhoto = useSelector(state => state.photos.find(x => x.id === +photoId))
-    console.log("edited", editedPhoto)
 
     const initialValues = isAddMode
         ? {
@@ -26,8 +23,6 @@ function AddEditPage(props) {
             photo: ""
         }
             : editedPhoto;
-
-    console.log ("ini values", initialValues)
     
     const handleSubmit = (values) => {
         return new Promise(resolve => {
@@ -35,7 +30,6 @@ function AddEditPage(props) {
             setTimeout(() => {
                 if(isAddMode) {
                     const action = addPhoto(values);
-                    console.log({action});
                     dispatch(action);
                 } else {
                     const action = updatePhoto(values);

@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialPhotos = [
-    {
+      {
         id: 91176,
         categoryId: 5,
         photo: 'https://picsum.photos/id/532/300/300',
@@ -80,12 +80,9 @@ const photo = createSlice({
     initialState: initialPhotos,
     reducers: {
         addPhoto: (state, action) => {
-          //const newPhoto = action.payload;
           state.push(action.payload)
         },
         removePhoto: (state, action) => {
-          console.log("payload", action.payload)
-
           const removePhoto = action.payload;
           return state.filter(photo => photo.id !== removePhoto)
         },
