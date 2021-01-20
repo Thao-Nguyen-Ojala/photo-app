@@ -1,3 +1,5 @@
+## Photo App
+
 In this photo app the user can randomly check through the photos from https://picsum.photos, select their favourite photo, name, sort it and save it in category
 The initial photos are hard-coded.
 The app is made with React, Redux, Formik, reactstrap
