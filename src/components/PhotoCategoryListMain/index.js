@@ -3,11 +3,11 @@ import Select from 'react-select';
 
 import { PHOTO_CATEGORY_OPTIONS } from 'constants/global';
 
-DropdownList.defaultProps = {
+PhotoCategoryList.defaultProps = {
   categoryId: null
 }
 
-function DropdownList(props) {       
+function PhotoCategoryList(props) {       
   const { filterChange } = props
   const handleFilterChange = (selectedCategoryValue) => {
     filterChange(selectedCategoryValue)
@@ -25,4 +25,4 @@ function DropdownList(props) {
   )
 }
 
-export default DropdownList
+export default PhotoCategoryList

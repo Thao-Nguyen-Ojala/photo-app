@@ -16,13 +16,13 @@ function AddEditPage(props) {
 
     const editedPhoto = useSelector(state => state.photos.find(x => x.id === +photoId))
 
-    const initialValues = isAddMode
-        ? {
+    const initialValues = isAddMode ? 
+        {
             title: "",
             categoryId: null,
             photo: ""
         }
-            : editedPhoto;
+        : editedPhoto;
     
     const handleSubmit = (values) => {
         return new Promise(resolve => {

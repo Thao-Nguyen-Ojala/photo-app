@@ -7,7 +7,7 @@ import Images from "constants/images";
 import { useDispatch, useSelector } from "react-redux";
 import PhotoList from "features/Photo/components/PhotoList";
 import { removePhoto } from "features/Photo/photoSlice";
-import DropdownList from "components/DropdownList";
+import PhotoCategoryList from "components/PhotoCategoryListMain";
 
 MainPage.propsTypes = {};
 
@@ -52,7 +52,7 @@ function MainPage(props) {
                 <div className="py-4">
                     <Link to="/photos/add">Add new photo</Link> 
                 </div>
-                <DropdownList 
+                <PhotoCategoryList 
                     filterChange={handleCategoryFilter}
                 />
 
